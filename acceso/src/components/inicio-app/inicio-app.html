@@ -1,0 +1,78 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+
+<dom-module id="inicio-app">
+  <template>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      :host {
+        display: block;
+      }
+      .container{
+        width: 100%;
+        height: calc(100vh);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      } 
+      .container paper-card {
+        padding: 1rem;
+        width: calc(45%);
+        height: 300px;
+      }
+      .container paper-card paper-button{
+        background-color: darkkhaki;
+        padding:
+      }
+    </style>
+    <div class="container">
+      <paper-card header={{prop1}}>
+        <paper-input label="Usuario" value={{usuario}}></paper-input>
+        <paper-input label="Contraseña" value={{contraseña}}></paper-input>
+        <paper-button toggles raised class="green">Ingresar</paper-button>
+      </paper-card>
+    </div>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class InicioApp extends Polymer.Element {
+      static get is() { return 'inicio-app'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'Pantalla de login'
+          },
+          usuario: {
+            type: String,
+            value: ''
+          },
+          contraseña: {
+            type: String,
+            value: ''
+          }
+        };
+      }
+      constructor() {
+        super()
+      }
+      ready() {
+        super.ready()
+        setTimeout(() => {
+          console.log(this.usuario, this.contraseña)
+        }, 300)
+      }
+    }
+
+    window.customElements.define(InicioApp.is, InicioApp);
+  </script>
+</dom-module>

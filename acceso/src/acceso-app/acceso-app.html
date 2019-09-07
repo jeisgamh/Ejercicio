@@ -1,0 +1,33 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../components/inicio-app/inicio-app.html">
+
+<dom-module id="acceso-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <inicio-app></inicio-app>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class AccesoApp extends Polymer.Element {
+      static get is() { return 'acceso-app'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'acceso-app'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(AccesoApp.is, AccesoApp);
+  </script>
+</dom-module>

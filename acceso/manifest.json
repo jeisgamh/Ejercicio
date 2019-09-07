@@ -1,0 +1,7 @@
+{
+  "name": "acceso",
+  "short_name": "acceso",
+  "description": "aceso-app",
+  "start_url": "/",
+  "display": "standalone"
+}
